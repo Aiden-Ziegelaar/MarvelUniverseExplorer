@@ -1,15 +1,13 @@
 import axios, {AxiosRequestConfig} from "axios";
+import {insertApiKey} from "./insertApiKey"
 
 const axiosConfig: AxiosRequestConfig = {
-  baseURL: process.env.REACT_APP_ENDPOINT,
+  baseURL: process.env.REACT_APP_API_ENDPOINT,
   timeout: 30000,
 };
 
 const instance = axios.create(axiosConfig);
 
-instance.interceptors.request.use((config) => {
-  config.params = {...config.params, apikey: process.env.REACT_APP_MARVEL_API_PUB_KEY}
-  return config
-})
+instance.interceptors.request.use(insertApiKey)
 
-module.exports = {api: instance}
+export const api = instance;

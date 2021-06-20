@@ -1,3 +1,5 @@
+import {IImage} from "./Image";
+
 export interface IBaseSummary {
   resourceURI?: string,
   name?: string
@@ -16,7 +18,7 @@ export interface IBaseDataWrapper <T> {
   copyright?: string,
   attributionText?: string,
   attributionHTML?: string,
-  data?: T
+  data: T
   etag?: string
 }
 
@@ -25,5 +27,5 @@ export interface IBaseDataContainer <T> {
   limit?: number,
   total?: number,
   count?: number,
-  data?: T[]
+  results: T[]
 }

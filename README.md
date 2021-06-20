@@ -1,8 +1,33 @@
-# Getting Started with Create React App
+#  Woodside Dev Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Interesting Bits
+
+### Component Reuse
+This project attempts to reuse components as much as possible, for example there is one of each 
+ItemCard, CardList, DetailsPage and SearchableCardList components that service multiple underlying 
+datatypes.
+
+### Interface Inheritance
+Many of the types can be derived from a base interface, which is exactly what is going on in the src/Types 
+folder.
+
+### Testing
+Time was a little limited whilst completing this project so only a few tests have been included. If I had
+more time I would like to have included MSW based tests for components that use the API directly. There are
+some tests that use fast forwarding timers though which I think is neat.
+
+### Stories
+The code to display the stories datatype is there, however due to the awful quality of the data
+it is commented out.
+
+### Theming
+In the interests of getting the project done I didn't dive too deeply into theming. I would have
+liked to spend some more time defining my theme and replacing all the static colour references 
+that are sprinkled throughout the project.
 
 ## Available Scripts
+
+Make sure you populate the .env file from .env.example and substitute in a valid API key
 
 In the project directory, you can run:
 

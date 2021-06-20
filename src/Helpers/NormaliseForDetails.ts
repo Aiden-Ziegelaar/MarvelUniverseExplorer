@@ -4,19 +4,19 @@ import {ICreator} from "../Types/Creator";
 import {IEvent} from "../Types/Event";
 import {ISeries} from "../Types/Series";
 import {IStory} from "../Types/Story";
-import {isICharacter, isIComic, isICreator, isIEvent, isISeries, isIStory, isTitled} from "./Predicates";
+import {isDescribed, isICharacter, isICreator, isTitled} from "./Predicates";
 
-interface ICardInfo {
+export interface IDetailsInfo {
   title: string;
   image: string;
-  link: string;
+  description: string;
 }
 
 
-function normaliseForCard (data: ICharacter | IComic | ICreator | IEvent | ISeries | IStory): ICardInfo {
+export function normaliseForDetails (data: ICharacter | IComic | ICreator | IEvent | ISeries | IStory): IDetailsInfo {
   const image = data.thumbnail ? `${data.thumbnail?.path}.${data.thumbnail?.extension}` : process.env.REACT_APP_IMAGE_NOT_FOUND || '';
-  let title = "Not Title"
-  let link = ""
+  let title = "No Title"
+  let description = ""
 
   if(isTitled(data)) {
     title = data.title || "No Title"
@@ -24,41 +24,19 @@ function normaliseForCard (data: ICharacter | IComic | ICreator | IEvent | ISeri
 
   if(isICreator(data)) {
     title = data.fullName || "No Name"
-    link = `/creators/${data.id}`
-    return {title,image,link}
   }
 
   if(isICharacter(data)) {
     title = data.name || "No Name"
-    link = `/characters/${data.id}`
-    return {title,image,link}
   }
 
-  if(isIComic(data)) {
-    link = `/comics/${data.id}`
-    return {title,image,link}
-  }
-
-  if(isIEvent(data)) {
-    link = `/events/${data.id}`
-    return {title,image,link}
-  }
-
-  if(isISeries(data)) {
-    link = `/series/${data.id}`
-    return {title,image,link}
-  }
-
-  if(isIStory(data)) {
-    link = `/stories/${data.id}`
-    return {title,image,link}
+  if(isDescribed(data)) {
+    description = data.description || "No Description Available"
   }
 
   return {
     title,
     image,
-    link
+    description
   }
 }
-
-export default normaliseForCard
