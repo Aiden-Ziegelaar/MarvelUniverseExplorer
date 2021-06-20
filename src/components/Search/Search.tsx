@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
 function Search (props: ISearchProps): JSX.Element {
   const classes = useStyles(theme);
   const onChange = (e: any) => {
-    console.log(e.target?.value)
     props.setSearch(e.target?.value)
   }
   const debounceOnChange = debounce(onChange, 500)
