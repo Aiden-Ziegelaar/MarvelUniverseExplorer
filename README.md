@@ -13,7 +13,9 @@ npm run start
 ### Component Reuse
 This project attempts to reuse components as much as possible, for example there is one of each 
 ItemCard, CardList, DetailsPage and SearchableCardList components that service multiple underlying 
-datatypes.
+datatypes. The components have been written to allow them to be used for future expansion, for example 
+the SearchableCardList element can also be used to display the information returned by a subresource 
+i.e. `/characters/:id/comics`.
 
 ### Interface Inheritance
 Many of the types can be derived from a base interface, which is exactly what is going on in the src/Types 
@@ -23,10 +25,6 @@ folder.
 Time was a little limited whilst completing this project so only a few tests have been included. If I had
 more time I would like to have included MSW based tests for components that use the API directly. There are
 some tests that use fast forwarding timers though which I think is neat.
-
-### Modular
-The components have been written to allow them to be used in a modular way, for example the SearchableCardList
-element can be used to also display the information returned by a subresource i.e. `/characters/:id/comics`.
 
 ### Stories
 The code to display the stories datatype is there, however due to the awful quality of the data
