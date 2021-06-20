@@ -96,9 +96,11 @@ function DetailsPage (props:DetailsPageProps): JSX.Element {
 
   return (
     <div>
+      <br/>
       <Typography variant="h3" color="textSecondary" component="p" className={classes.typography}>
         {normalisedData.title}
       </Typography>
+      <br/>
       <img src={normalisedData.image} alt={normalisedData.title} className={classes.image}/>
       <br/>
       <br/>
