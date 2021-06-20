@@ -24,6 +24,10 @@ Time was a little limited whilst completing this project so only a few tests hav
 more time I would like to have included MSW based tests for components that use the API directly. There are
 some tests that use fast forwarding timers though which I think is neat.
 
+### Modular
+The components have been written to allow them to be used in a modular way, for example the SearchableCardList
+element can be used to also display the information returned by a subresource i.e. `/characters/:id/comics`.
+
 ### Stories
 The code to display the stories datatype is there, however due to the awful quality of the data
 it is commented out.
