@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
   },
   typography: {
     color: "white",
-    'font-family': 'Staatliches'
+    'font-family': 'Staatliches',
+    wordWrap: "normal"
   },
   typographyHolder: {
     maxWidth: 600,
@@ -95,7 +96,7 @@ function DetailsPage (props:DetailsPageProps): JSX.Element {
 
   return (
     <div>
-      <Typography noWrap variant="h1" color="textSecondary" component="p" className={classes.typography}>
+      <Typography variant="h3" color="textSecondary" component="p" className={classes.typography}>
         {normalisedData.title}
       </Typography>
       <img src={normalisedData.image} alt={normalisedData.title} className={classes.image}/>
