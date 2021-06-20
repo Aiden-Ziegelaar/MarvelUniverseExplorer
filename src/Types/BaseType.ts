@@ -1,5 +1,3 @@
-import {IImage} from "./Image";
-
 export interface IBaseSummary {
   resourceURI?: string,
   name?: string
