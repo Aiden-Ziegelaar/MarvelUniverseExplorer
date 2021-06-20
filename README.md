@@ -15,7 +15,7 @@ This project attempts to reuse components as much as possible, for example there
 ItemCard, CardList, DetailsPage and SearchableCardList components that service multiple underlying 
 datatypes. The components have been written to allow them to be used for future expansion, for example 
 the SearchableCardList element can also be used to display the information returned by a subresource 
-i.e. `/characters/:id/comics`.
+i.e. `/characters/:id/comics` simply by passing in the resource path.
 
 ### Interface Inheritance
 Many of the types can be derived from a base interface, which is exactly what is going on in the src/Types 
