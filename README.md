@@ -1,5 +1,13 @@
 #  Woodside Dev Challenge
 
+## Running the Project
+
+Make sure you populate the .env file from .env.example and substitute in a valid API key.
+```
+npm install
+npm run start
+```
+
 ## Interesting Bits
 
 ### Component Reuse
@@ -26,8 +34,6 @@ liked to spend some more time defining my theme and replacing all the static col
 that are sprinkled throughout the project.
 
 ## Available Scripts
-
-Make sure you populate the .env file from .env.example and substitute in a valid API key
 
 In the project directory, you can run:
 
